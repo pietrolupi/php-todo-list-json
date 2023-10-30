@@ -8,6 +8,7 @@ createApp({
     return{
       title: 'Todolist',
       list: [],
+      newTodo: ''
     }
   },
 
@@ -20,6 +21,16 @@ createApp({
         console.log(result.data);
         this.list = result.data;
       })
+    },
+
+    addTask(){
+      const data = new FormData();
+      data.append('todoItem', this.newTodo);
+
+      axios.post('server.php', data)
+      .then(result=>{
+        this.list = result.data;
+      });
     }
   },
 

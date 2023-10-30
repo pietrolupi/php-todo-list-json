@@ -17,7 +17,7 @@
 </head>
 <body>
 
-  <div class="container m-auto pt-5 " id="app">
+  <div class="container custom m-auto pt-5 " id="app">
     <h1 class="text-center ">{{title}}</h1>
 
     <ul class="list-group">
@@ -28,6 +28,25 @@
     </li>
       
     </ul>
+
+    <div class="input-group mt-4 ">
+      <input
+      v-model="newTodo"
+      @keyup.enter="addTask()" 
+      type="text" 
+      class="form-control" 
+      placeholder="Nuova Task">
+
+      <div class="input-group-append">
+        <button 
+        @click="addTask()"
+        class="btn btn-outline-secondary" 
+        type="button">INVIA</button>
+      </div>
+    </div>
+
+    
+
   </div>
   
 
