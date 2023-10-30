@@ -17,8 +17,17 @@
 </head>
 <body>
 
-  <div class="container" id="app">
-    <h1>{{title}}</h1>
+  <div class="container m-auto pt-5 " id="app">
+    <h1 class="text-center ">{{title}}</h1>
+
+    <ul class="list-group">
+      <li
+      class="list-group-item"
+      v-for="(item,index) in list">
+      {{item}}
+    </li>
+      
+    </ul>
   </div>
   
 
