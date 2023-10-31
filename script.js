@@ -30,6 +30,18 @@ createApp({
       axios.post('server.php', data)
       .then(result=>{
         this.list = result.data;
+        this.newTodo = ''; //perchè non svuota il campo?
+      });
+    },
+
+    removeTask(index){
+      
+      const data = new FormData();
+      data.append('indexToDelete', index);
+      
+      axios.post('server.php', data)
+      .then(result=>{
+        this.list = result.data;
       });
     }
   },
